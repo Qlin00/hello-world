@@ -5,6 +5,7 @@ class Prime {//素数类
 private:
 	int val;
 public:
+	Prime(){}
 	Prime(int n): val(n){}//构造函数 
 	bool Isprime() {//判断是否为素数 
 		if (val <= 1)
@@ -21,6 +22,7 @@ class Superprime{//超级素数
 private:
 	int val;
 public:
+	Superprime(){}
 	Superprime(int n): val(n){}
 	bool IsSuperprime() {//判断是否为超级素数 
 		Prime v(val);
@@ -66,6 +68,7 @@ private:
 	int max;
 	vector<int> all;
 public:
+	SuperprimeSets(){}
 	SuperprimeSets(int n, int m){//直接在构造时给最大值，个数，和赋值，不需要每次都去调用函数 
 		front = n;
 		back = m;
