@@ -1,12 +1,12 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-class Prime {
+class Prime {//素数类 
 private:
 	int val;
 public:
-	Prime(int n): val(n){}
-	bool Isprime() {
+	Prime(int n): val(n){}//构造函数 
+	bool Isprime() {//判断是否为素数 
 		if (val <= 1)
 			return 0;
 		else {
@@ -17,19 +17,19 @@ public:
 		}
 	}
 };
-class Superprime{
+class Superprime{//超级素数 
 private:
 	int val;
 public:
 	Superprime(int n): val(n){}
-	bool IsSuperprime() {
+	bool IsSuperprime() {//判断是否为超级素数 
 		Prime v(val);
 		Prime s(SumNumber());
 		Prime m(MulityNumber());
 		Prime q(SquareNumber());
 		return v.Isprime() && s.Isprime() && m.Isprime() && q.Isprime();
 	}
-	int SumNumber() {
+	int SumNumber() {//数位之和 
 		int sum = 0;
 		int temp = val;
 		while (temp) {
@@ -38,7 +38,7 @@ public:
 		}
 		return sum;
 	}
-	int MulityNumber() {
+	int MulityNumber() {//数位之积 
 		int mulity = 1;
 		int temp = val;
 		while (temp) {
@@ -47,7 +47,7 @@ public:
 		}
 		return mulity;
 	}
-	int SquareNumber() {
+	int SquareNumber() {//数位平方和 
 		int temp = val;
 		int sum = 0;
 		while (temp) {
@@ -57,7 +57,7 @@ public:
 		return sum;
 	}
 };
-class SuperprimeSets {
+class SuperprimeSets {//超级素数集合 
 private:
 	int front;
 	int back;
@@ -66,7 +66,7 @@ private:
 	int max;
 	vector<int> all;
 public:
-	SuperprimeSets(int n, int m){
+	SuperprimeSets(int n, int m){//直接在构造时给最大值，个数，和赋值，不需要每次都去调用函数 
 		front = n;
 		back = m;
 		count = 0;
@@ -83,7 +83,7 @@ public:
 			}
 		}
 	}
-	void show() {
+	void show() {//展示这个超级素数集合的内容 
 		cout << front << "与" << back << "之间的超级素数有:" ;
 		vector<int> ::iterator ite = all.begin();
 		for (ite; ite != all.end(); ite++)
@@ -95,6 +95,7 @@ public:
 
 	}
 };
+//主函数 
 int main() {
 	int n, m;
 	cout << "请输入起始与结尾值：" << endl;
