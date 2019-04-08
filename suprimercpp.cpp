@@ -17,6 +17,9 @@ public:
 			return 1;
 		}
 	}
+	~Prime() {
+
+	}
 };
 class Superprime{//超级素数 
 private:
@@ -25,11 +28,14 @@ public:
 	Superprime(){}
 	Superprime(int n): val(n){}
 	bool IsSuperprime() {//判断是否为超级素数 
-		Prime v(val);
-		Prime s(SumNumber());
-		Prime m(MulityNumber());
-		Prime q(SquareNumber());
+		const Prime v(val);
+		const Prime s(SumNumber());
+		const Prime m(MulityNumber());
+		const Prime q(SquareNumber());
 		return v.Isprime() && s.Isprime() && m.Isprime() && q.Isprime();
+	}
+	~Superprime() {
+
 	}
 	int SumNumber() {//数位之和 
 		int sum = 0;
@@ -86,7 +92,13 @@ public:
 			}
 		}
 	}
-	void show() {//展示这个超级素数集合的内容 
+	SuperprimeSets(const SuperprimeSets sp&) {
+		
+	}
+	~SuperprimeSets() {
+
+	}
+	void show() const{//展示这个超级素数集合的内容 
 		cout << front << "与" << back << "之间的超级素数有:" ;
 		vector<int> ::iterator ite = all.begin();
 		for (ite; ite != all.end(); ite++)
