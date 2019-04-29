@@ -34,6 +34,7 @@ public:
 	~NumberSet() {
 		for (int i = 0; i < size; i++)
 			delete nums[i];
+		//try the result
 	}
 	bool add(const Number &n) { //&号为引用的意思
 		//nums[size++] = &n //&号为取地址的意思。
