@@ -48,6 +48,7 @@ public:
 	}
 };
 class SuperPrime : public Number{
+private:
 public:
 	bool isSurperPrime() const {
 		Number n(num);
